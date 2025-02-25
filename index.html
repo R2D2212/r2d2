@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo a los Maestros de Zacatecas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #121212; /* Fondo más oscuro */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background-color: rgba(25, 25, 25, 0.9); /* Fondo más oscuro */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .card-text {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .card-text p {
+            font-size: 1.125rem; /* Ajustar tamaño de texto */
+            color: #d1d5db; /* Color más suave para el texto */
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro */
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</head>
+<body class="voronoi-background">
+
+    <!-- Header -->
+    <header class="text-center py-8">
+        <h1 class="text-3xl font-semibold text-gray-300">Apoyo a los Maestros de Zacatecas</h1>
+        <p class="text-lg mt-2 text-gray-400">En contra del abuso y la represión del gobierno.</p>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="1.jpeg" alt="Imagen de solidaridad 1" onclick="openModal('1.jpeg')">
+                <div class="card-text">
+                    <p>SPAUAZ</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="2.jpeg" alt="Imagen de solidaridad 2" onclick="openModal('2.jpeg')">
+                <div class="card-text">
+                    <p>Agradecemos el apoyo del Sindicato de Telefonistas. No estamos solos. 🟥⬛️</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="3.jpeg" alt="Imagen de solidaridad 3" onclick="openModal('3.jpeg')">
+                <div class="card-text">
+                    <p>Agradecemos la solidaridad de Alianza Sindical Stuaz. ¡La fuerza de todos!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="text-center py-16">
+        <blockquote class="text-lg font-semibold italic text-gray-400">
+            "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
+        </blockquote>
+        <p class="mt-4 text-sm text-gray-500">- Nelson Mandela</p>
+    </section>
+
+    <!-- Modal for Image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-400">
+        <p>&copy; 2025 Apoyo a los Maestros de Zacatecas. Todos los derechos reservados.</p>
+        <p class="mt-2">Unidos por la educación, luchamos contra la opresión.</p>
+    </footer>
+
+</body>
+</html>
